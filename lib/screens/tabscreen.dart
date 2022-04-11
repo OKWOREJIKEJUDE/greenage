@@ -19,65 +19,67 @@ class _MyTabScreenState extends State<MyTabScreen> {
       child: Scaffold(
         body: Padding(
           padding: const EdgeInsets.all(8.0),
-          child: Column(
-            children: [
-              Padding(
-                padding: const EdgeInsets.only(top: 80),
-                child: Center(
-                  child: Container(
-                    child: Text(
-                      "Welcome Back",
-                      style: TextStyle(
-                          fontSize: 35,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.black),
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(top: 80),
+                  child: Center(
+                    child: Container(
+                      child: Text(
+                        "Welcome Back",
+                        style: TextStyle(
+                            fontSize: 35,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.black),
+                      ),
                     ),
                   ),
                 ),
-              ),
-              SizedBox(
-                height: 40,
-              ),
-              Container(
-                height: 45,
-                // decoration: BoxDecoration(
-                //     color: Colors.grey,
-                //     borderRadius: BorderRadius.circular(10)),
-                child: TabBar(
-                  indicator: BoxDecoration(
-                      color: Colors.greenAccent,
-                      borderRadius: BorderRadius.circular(8)),
-                  indicatorColor: Colors.greenAccent,
-                  tabs: [
-                    Tab(
-                      child: Text(
-                        "Sign In",
-                        style: TextStyle(
-                            fontSize: 15,
-                            fontWeight: FontWeight.normal,
-                            color: Colors.black),
-                      ),
-                    ),
-                    Tab(
-                      child: Text(
-                        "Sign Up",
-                        style: TextStyle(
-                            fontSize: 15,
-                            fontWeight: FontWeight.normal,
-                            color: Colors.black),
-                      ),
-                    ),
-                  ],
+                SizedBox(
+                  height: 40,
                 ),
-              ),
-              SizedBox(
-                height: 530,
-                child: TabBarView(children: [
-                  SignInPage(),
-                  SignUpPage(),
-                ]),
-              )
-            ],
+                Container(
+                  height: 45,
+                  // decoration: BoxDecoration(
+                  //     color: Colors.grey,
+                  //     borderRadius: BorderRadius.circular(10)),
+                  child: TabBar(
+                    indicator: BoxDecoration(
+                        color: Colors.lightGreen,
+                        borderRadius: BorderRadius.circular(8)),
+                    indicatorColor: Colors.lightGreen,
+                    tabs: [
+                      Tab(
+                        child: Text(
+                          "Sign In",
+                          style: TextStyle(
+                              fontSize: 15,
+                              fontWeight: FontWeight.normal,
+                              color: Colors.black),
+                        ),
+                      ),
+                      Tab(
+                        child: Text(
+                          "Sign Up",
+                          style: TextStyle(
+                              fontSize: 15,
+                              fontWeight: FontWeight.normal,
+                              color: Colors.black),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Container(
+                  height: 540,
+                  child: TabBarView(children: [
+                    SignInPage(),
+                    SignUpPage(),
+                  ]),
+                )
+              ],
+            ),
           ),
         ),
       ),

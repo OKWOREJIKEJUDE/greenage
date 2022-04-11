@@ -2,7 +2,6 @@
 
 import 'package:flutter/material.dart';
 import 'package:greenage/content_model.dart';
-import 'package:greenage/screens/login1.dart';
 import 'package:greenage/screens/tabscreen.dart';
 
 class Onbording extends StatefulWidget {
@@ -33,7 +32,7 @@ class _OnbordingState extends State<Onbording> {
                 _buildPageContent(
                   isShowImageOnTop: false,
 
-                  image2: "assets/images/green4.jpeg",
+                  image2: "assets/images/pexx1.png",
                   body: 'Set your own goals and get better',
                   desc:
                       "Goal support your motivation and inspire you to work harder",
@@ -42,7 +41,7 @@ class _OnbordingState extends State<Onbording> {
                 _buildPageContent(
                   isShowImageOnTop: false,
 
-                  image2: "assets/images/green1.jpeg",
+                  image2: "assets/images/pexx.png",
                   body: 'Track your progress with statistics ',
                   desc:
                       "Analyse personal result with detailed chart and numerical values",
@@ -51,7 +50,7 @@ class _OnbordingState extends State<Onbording> {
                 _buildPageContent(
                   isShowImageOnTop: false,
 
-                  image2: "assets/images/green5.jpg",
+                  image2: "assets/images/pexx2.png",
                   body: 'Create photo comparisons and share your results',
                   desc:
                       "Take before and after photos to visualize progress and get the shape that you dream about",
@@ -88,8 +87,10 @@ class _OnbordingState extends State<Onbording> {
                     if (_currentPage == 2)
                       InkWell(
                         onTap: () => {
-                          Navigator.push(context,
-                              MaterialPageRoute(builder: (context) => MyTabScreen()))
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => MyTabScreen()))
                         },
                         child: Container(
                           height: 50,
