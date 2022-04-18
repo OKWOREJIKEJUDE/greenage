@@ -2,20 +2,26 @@
 
 import 'package:flutter/material.dart';
 
-class DetailsPage extends StatefulWidget {
+class SecondDetailsPage extends StatefulWidget {
   final heroTag;
   final firstText;
   final secondText;
   final foodPrice;
-  const DetailsPage(
-      {Key? key, this.heroTag, this.firstText, this.secondText, this.foodPrice})
+  
+  const SecondDetailsPage(
+      {Key? key,
+      this.heroTag,
+      this.firstText,
+      this.secondText,
+      this.foodPrice,
+     })
       : super(key: key);
 
   @override
-  State<DetailsPage> createState() => _DetailsPageState();
+  State<SecondDetailsPage> createState() => _SecondDetailsPageState();
 }
 
-class _DetailsPageState extends State<DetailsPage> {
+class _SecondDetailsPageState extends State<SecondDetailsPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

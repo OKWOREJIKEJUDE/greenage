@@ -81,7 +81,7 @@ class _SignUpPageState extends State<SignUpPage> {
               SizedBox(height: 30),
               Container(
                 height: 50,
-                // margin: EdgeInsets.all(10),
+              
                 width: double.infinity,
                 child: FlatButton(
                   child: Text("Sign Up"),

@@ -41,9 +41,7 @@ class _MyTabScreenState extends State<MyTabScreen> {
                 ),
                 Container(
                   height: 45,
-                  // decoration: BoxDecoration(
-                  //     color: Colors.grey,
-                  //     borderRadius: BorderRadius.circular(10)),
+               
                   child: TabBar(
                     indicator: BoxDecoration(
                         color: Colors.lightGreen,

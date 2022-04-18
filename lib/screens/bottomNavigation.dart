@@ -27,39 +27,59 @@ class _BottomNavState extends State<BottomNav> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBody: true,
       body: tabs[mycurrent_index],
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: mycurrent_index,
-        type: BottomNavigationBarType.fixed,
-        items: [
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.home,
-            ),
-            title: Text("Home"),
+      bottomNavigationBar: Container(
+        height: 70,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.only(),
+          boxShadow: [
+            BoxShadow(
+                color: Colors.black.withOpacity(0.2),
+                spreadRadius: 0,
+                blurRadius: 10),
+          ],
+        ),
+        child: ClipRRect(
+          borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(20),
+            topRight: Radius.circular(20),
           ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.kitchen),
-            title: Text("Inbox"),
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.category),
-            title: Text("Categories"),
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.kitchen),
-            title: Text("Order"),
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person),
-            title: Text("Me"),
-          )
-        ],
-        onTap: (index) {
-          setState(() {
-            mycurrent_index = index;
-          });
-        },
+          child: BottomNavigationBar(
+              // backgroundColor: Color(0xFFF0B50F),
+              currentIndex: mycurrent_index,
+              type: BottomNavigationBarType.fixed,
+              selectedLabelStyle: TextStyle(fontSize: 12),
+              items: [
+                BottomNavigationBarItem(
+                  icon: Icon(
+                    Icons.home,
+                  ),
+                  title: Text("Home"),
+                ),
+                BottomNavigationBarItem(
+                  icon: Icon(Icons.kitchen),
+                  title: Text("Inbox"),
+                ),
+                BottomNavigationBarItem(
+                  icon: Icon(Icons.category),
+                  title: Text("Categories"),
+                ),
+                BottomNavigationBarItem(
+                  icon: Icon(Icons.kitchen),
+                  title: Text("Order"),
+                ),
+                BottomNavigationBarItem(
+                  icon: Icon(Icons.person),
+                  title: Text("Me"),
+                )
+              ],
+              onTap: (index) {
+                setState(() {
+                  mycurrent_index = index;
+                });
+              }),
+        ),
       ),
     );
   }
