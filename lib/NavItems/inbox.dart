@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 
+
 class Inbox extends StatefulWidget {
   const Inbox({Key? key}) : super(key: key);
 
@@ -111,8 +112,10 @@ class _InboxState extends State<Inbox> {
                               radius: 25,
                               backgroundImage: AssetImage(greenImg[index]),
                             ),
-
-                            //onTap: () {},
+                            onTap: () {
+                              // Navigator.of(context).push(MaterialPageRoute(
+                              //     builder: (context) => InboxDataItems(greenRelated[index],)));
+                            },
                           ),
                         ),
                       ),

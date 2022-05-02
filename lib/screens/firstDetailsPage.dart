@@ -29,14 +29,13 @@ class _FirstDetailsPageState extends State<FirstDetailsPage> {
                 height: 200.0,
                 decoration: BoxDecoration(
                     image: DecorationImage(
-                        image: AssetImage('assets/images/pexx.png'),
-                        fit: BoxFit.cover),
+                        image: AssetImage(''), fit: BoxFit.cover),
                     borderRadius: BorderRadius.only(
                         bottomLeft: Radius.circular(100.0),
                         bottomRight: Radius.circular(100.0))),
               ),
               Positioned(
-                  top: 50.0,
+                  top: 30.0,
                   left: (MediaQuery.of(context).size.width / 2) - 125,
                   child: Hero(
                       tag: widget.smallheroTag,
@@ -89,7 +88,6 @@ class _FirstDetailsPageState extends State<FirstDetailsPage> {
                 SizedBox(
                   height: 2,
                 ),
-              
                 SizedBox(height: 5),
                 Row(
                   children: <Widget>[

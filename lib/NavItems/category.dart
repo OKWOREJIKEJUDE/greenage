@@ -1,7 +1,8 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
-import 'package:greenage/datas.dart';
+import 'package:greenage/model/datas.dart';
+import 'package:greenage/screens/categoryDetailItem.dart';
 
 class Category extends StatefulWidget {
   Category({Key? key}) : super(key: key);
@@ -11,54 +12,8 @@ class Category extends StatefulWidget {
 }
 
 class _CategoryState extends State<Category> {
+  static List<String> greenRelatedOnSearch = [];
   TextEditingController searchIthere = TextEditingController();
-  static List<String> greenRelated = [
-    "Organic Products",
-    "Eco Consulting",
-    "Green Products",
-    "Event Planning",
-    "Sustainable Events",
-    "Vendor",
-    "Green Services",
-    "Franchise",
-    "Consults",
-    "Consultancy Services",
-    "Finance",
-    "Cathering",
-    "Eco-Friendly",
-    "Land Scapping",
-    "Beauty Salon"
-  ];
-  static List greenImg = [
-    'assets/images/gren4.jpg',
-    'assets/images/gren5.jpg',
-    'assets/images/gren6.jpg',
-    'assets/images/gren7.jpg',
-    'assets/images/gren8.jpg',
-    'assets/images/gren9.jpg',
-    'assets/images/green2.jpg',
-    'assets/images/green4.jpeg',
-    'assets/images/green2.jpg',
-    'assets/images/green5.jpg',
-    'assets/images/green1.jpeg',
-    'assets/images/gren7.jpg',
-    'assets/images/gren5.jpg',
-    'assets/images/green5.jpg',
-    'assets/images/green4.jpeg',
-  ];
-
-  List<MyGreenDatas> greenDataLoad = List.generate(
-      greenRelated.length,
-      (index) => MyGreenDatas(
-            name: '${greenRelated[index]}',
-            imageURL: '${greenImg[index]}',
-          ));
-  // final List<MyFood> foodDataLoad = List.generate(
-  //     foodData.length,
-  //     (index) => MyFood(
-  //           name: '${foodData[index]}',
-  //           imageURL: '${foodData[index]}',
-  //         ));
 
   @override
   Widget build(BuildContext context) {
@@ -93,13 +48,7 @@ class _CategoryState extends State<Category> {
                 ],
               ),
               child: TextField(
-                onChanged: (value) {
-                  setState(() {
-                    greenRelated = greenRelated
-                        .where((element) => element.contains(value))
-                        .toList();
-                  });
-                },
+                onChanged: (value) {},
                 controller: searchIthere,
                 decoration: InputDecoration(
                     prefixIcon: Icon(Icons.search),
@@ -111,23 +60,29 @@ class _CategoryState extends State<Category> {
             SizedBox(height: 10),
             Expanded(
               child: ListView.builder(
-                  itemCount: greenDataLoad.length,
+                  itemCount: listData.length,
                   itemBuilder: (context, index) {
+                    MyDatas myDatas = listData[index];
                     return Container(
                       height: 80,
                       child: Card(
                         elevation: 1,
                         child: Center(
                           child: ListTile(
-                            title: Text(greenDataLoad[index].name),
-                            leading: CircleAvatar(
-                              radius: 25,
-                              backgroundImage:
-                                  AssetImage(greenDataLoad[index].imageURL),
-                            ),
-
-                            //onTap: () {},
-                          ),
+                              title: Text(myDatas.name),
+                              leading: CircleAvatar(
+                                radius: 25,
+                                backgroundImage: AssetImage(myDatas.imageURL),
+                              ),
+                              trailing: Icon(Icons.arrow_forward_ios_rounded),
+                              onTap: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            CategoryDetailsScreen(
+                                                myDatas: myDatas)));
+                              }),
                         ),
                       ),
                     );

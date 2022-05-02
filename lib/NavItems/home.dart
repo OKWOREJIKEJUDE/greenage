@@ -54,7 +54,7 @@ class _HomeState extends State<Home> {
                 ),
               ),
               SizedBox(
-                height: 40,
+                height: 30,
               ),
               Container(
                 child: Row(
@@ -122,7 +122,7 @@ class _HomeState extends State<Home> {
                 ),
               ),
               SizedBox(
-                height: 45,
+                height: 35,
               ),
               Container(
                 margin: EdgeInsets.only(left: 10, right: 10),
